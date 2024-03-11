@@ -76,15 +76,7 @@ body {
     left: 135px; /* Положение полосы по горизонтали */
     background-color: white;
 }
-.round:nth-child(1) .match:nth-child(1) .connector.additional {
-    content: "";
-    position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
-    left: 770px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
+
 
 .round:nth-child(1) .match:nth-child(2) {
     position: relative;
@@ -109,12 +101,126 @@ body {
     left: 135px; /* Положение полосы по горизонтали */
     background-color: white;
 }
-.round:nth-child(1) .match:nth-child(2) .connector.additional2 {
+
+.round:nth-child(1) .match:nth-child(3) {
+    position: relative;
+}
+
+.round:nth-child(1) .match:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 120px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(3)::after {
     content: "";
     position: absolute;
     top: 130%; /* Положение полосы по вертикали */
-    left: 452px; /* Положение полосы по горизонтали */
+    height: 1px; /* Высота полосы */
+    width: 318px; /* Ширина третьей полосы */
+    left: 135px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(4) {
+    position: relative;
+}
+
+.round:nth-child(1) .match:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 120px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(5) {
+    position: relative;
+}
+
+.round:nth-child(1) .match:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 120px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(6) {
+    position: relative;
+}
+
+.round:nth-child(1) .match:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 120px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(6)::after {
+    content: "";
+    position: absolute;
+    top: 130%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 318px; /* Ширина третьей полосы */
+    left: -182px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(7) {
+    position: relative;
+}
+
+.round:nth-child(1) .match:nth-child(7)::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
     height: 50px; /* Высота полосы */
     width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(7)::after {
+    content: "";
+    position: absolute;
+    top: 130%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 318px; /* Ширина третьей полосы */
+    left: -182px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+.round:nth-child(1) .match:nth-child(8) {
+    position: relative;
+}
+
+.round:nth-child(1) .match:nth-child(8)::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 50px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(8)::after {
+    content: "";
+    position: absolute;
+    top: 130%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 318px; /* Ширина третьей полосы */
+    left: -182px; /* Положение полосы по горизонтали */
     background-color: white;
 }
