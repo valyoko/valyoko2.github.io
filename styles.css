@@ -1,0 +1,139 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #222;
+    color: #bbb;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Интервал между стадиями сверху вниз */
+    margin-bottom: 30px; /* Интервал между стадиями снизу вверх */
+}
+
+.match {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.match:hover {
+    transform: translateY(-5px);
+}
+
+.participant {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #666;
+    font-size: 16px;
+    background-color: #222;
+    color: #bbb;
+    transition: all 0.3s ease;
+}
+
+.participant:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+.connector {
+    width: 2px;
+    background-color: white;
+    position: absolute;
+}
+
+/* Первая полоса */
+.match:nth-child(1) .connector {
+    top: 100%; /* Положение полосы по вертикали */
+    left: 136px; /* Положение полосы по горизонтали */
+    height: 30%; /* Высота полосы */
+}
+.match:nth-child(1) .connector:before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение второй полосы по вертикали */
+    left: 0px; /* Положение второй полосы по горизонтали */
+    width: 633px; /* Ширина второй полосы */
+    height: 1%; /* Высота второй полосы */
+    background-color: white;
+    transform: translateY(-50%);
+}
+.match:nth-child(1) .connector:after {
+    content: "";
+    position: absolute;
+    top: 150%; /* Положение полосы по вертикали */
+    left: 633px; /* Положение полосы по горизонтали */
+    height: 100%; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+    transform: translateY(-50%);
+}
+
+.match:nth-child(2) .connector {
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 30%; /* Высота полосы */
+}
+.match:nth-child(2) .connector:before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение второй полосы по вертикали */
+    left: 0px; /* Положение второй полосы по горизонтали */
+    width: 317px; /* Ширина второй полосы */
+    height: 1%; /* Высота второй полосы */
+    background-color: white;
+    transform: translateY(-50%);
+}
+.match:nth-child(2) .connector:after {
+    content: "";
+    position: absolute;
+    top: 150%; /* Положение полосы по вертикали */
+    left: 317px; /* Положение полосы по горизонтали */
+    height: 100%; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+    transform: translateY(-50%);
+}
+
+.match:nth-child(3) .connector {
+    top: 100%; /* Положение полосы по вертикали */
+    left: 135px; /* Положение полосы по горизонтали */
+    height: 30%; /* Высота полосы */
+}
+.match:nth-child(3) .connector:before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Положение второй полосы по вертикали */
+    left: 0px; /* Положение второй полосы по горизонтали */
+    width: 324px; /* Ширина второй полосы */
+    height: 1%; /* Высота второй полосы */
+    background-color: white;
+    transform: translateY(-50%);
+}
+.match:nth-child(3) .connector:after {
+    content: "";
+    position: absolute;
+    top: 150%; /* Положение полосы по вертикали */
+    left: 324px; /* Положение полосы по горизонтали */
+    height: 100%; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+    transform: translateY(-50%);
+}
