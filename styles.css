@@ -5,19 +5,50 @@ body {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Создаем 5 столбцов шириной 1fr */
+    grid-gap: 20px; /* Отступ между элементами */
     padding: 20px;
+    width: 2500px;
+    margin: 0 auto;
+    margin-left: 10px;
 }
 
 .round {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px; /* Интервал между стадиями сверху вниз */
-    margin-bottom: 30px; /* Интервал между стадиями снизу вверх */
+    flex-direction: column;
+    margin-top: 300px;
+    width: max-content; /* Чтобы каждый блок занимал только необходимое пространство */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+}
+
+
+.round:nth-child(1) {
+    grid-column: 1 / span 1; /* Занимает 1 столбец */
+}
+
+.round:nth-child(2) {
+    grid-column: 2 / span 1; /* Занимает 1 столбец и начинается со второго столбца */
+    align-self: flex-start;
+    margin-top: 410px;
+    margin-right: auto; /* Положение блоков по центру горизонтально */;
+}
+.round:nth-child(3) {
+    margin-top: 615px; /* Измените значение по вашему усмотрению */
+    align-self: flex-start;
+    margin-right: auto; /* Положение блоков по центру горизонтально */;
+}
+.round:nth-child(4) {
+    margin-top: 716px; /* Измените значение по вашему усмотрению */
+    align-self: flex-start;
+    margin-right: auto; /* Положение блоков по центру горизонтально */;
+}
+.round:nth-child(5) {
+    align-self: flex-start;
+    margin-left: 2vw; /* Положение блоков по центру горизонтально */
+    margin-top: 724px; /* Измените значение по вашему усмотрению */
+    margin-right: auto; /* Положение блоков по центру горизонтально */;
+    grid-column: span 1; /* Занимает 1 столбец */
 }
 
 .match {
@@ -30,6 +61,17 @@ body {
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     position: relative;
+    min-height: 100px;
+}
+
+.round:last-child .match {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round:last-child .match .participant {
+    margin: 10px;
 }
 
 .match:hover {
@@ -47,6 +89,7 @@ body {
     transition: all 0.3s ease;
 }
 
+
 .participant:focus {
     outline: none;
     border-color: #4CAF50;
@@ -60,9 +103,9 @@ body {
 .round:nth-child(1) .match:nth-child(1)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
+    top:50%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 410px; /* Высота полосы */
     width: 1px; /* Ширина третьей полосы */
     background-color: white;
 }
@@ -70,10 +113,10 @@ body {
 .round:nth-child(1) .match:nth-child(1)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 636px; /* Ширина третьей полосы */
-    left: 135px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
@@ -85,20 +128,20 @@ body {
 .round:nth-child(1) .match:nth-child(2)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: 280px; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 119px; /* Ширина третьей полосы */
+    left: 388px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
 .round:nth-child(1) .match:nth-child(2)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: 135px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
@@ -106,23 +149,24 @@ body {
     position: relative;
 }
 
-.round:nth-child(1) .match:nth-child(3)::before {
-    content: "";
-    position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 120px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
 
 .round:nth-child(1) .match:nth-child(3)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: 135px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    top:50%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 201px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
     background-color: white;
 }
 
@@ -133,10 +177,10 @@ body {
 .round:nth-child(1) .match:nth-child(4)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 120px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 230px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
@@ -147,10 +191,10 @@ body {
 .round:nth-child(1) .match:nth-child(5)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 120px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 230px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
@@ -158,23 +202,23 @@ body {
     position: relative;
 }
 
-.round:nth-child(1) .match:nth-child(6)::before {
-    content: "";
-    position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 120px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
-
 .round:nth-child(1) .match:nth-child(6)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: -182px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(1) .match:nth-child(6)::before {
+    content: "";
+    position: absolute;
+    top: -75%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 201px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
     background-color: white;
 }
 
@@ -185,67 +229,70 @@ body {
 .round:nth-child(1) .match:nth-child(7)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: -120px; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 119px; /* Ширина третьей полосы */
+    left: 388px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
 .round:nth-child(1) .match:nth-child(7)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: -182px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
-}
-.round:nth-child(1) .match:nth-child(8) {
-    position: relative;
 }
 
-.round:nth-child(1) .match:nth-child(8)::before {
-    content: "";
-    position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
+.round:nth-child(1) .match:nth-child(8) {
+    position: relative;
 }
 
 .round:nth-child(1) .match:nth-child(8)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: -182px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
+
+.round:nth-child(1) .match:nth-child(8)::before {
+    content: "";
+    position: absolute;
+    top: -320px; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 401px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
+    background-color: white;
+}
+
 
 .round:nth-child(2) .match:nth-child(1) {
     position: relative;
 }
 
-.round:nth-child(2) .match:nth-child(1)::before {
-    content: "";
-    position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
 
 .round:nth-child(2) .match:nth-child(1)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: 135px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(2) .match:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    top:50%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 201px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
     background-color: white;
 }
 
@@ -256,10 +303,10 @@ body {
 .round:nth-child(2) .match:nth-child(2)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 120px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 230px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
@@ -267,23 +314,23 @@ body {
     position: relative;
 }
 
-.round:nth-child(2) .match:nth-child(4)::before {
-    content: "";
-    position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
-
 .round:nth-child(2) .match:nth-child(4)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 318px; /* Ширина третьей полосы */
-    left: -182px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(2) .match:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    top: -75%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 201px; /* Высота полосы */
+    width: 1px; /* Ширина третьей полосы */
     background-color: white;
 }
 
@@ -294,9 +341,33 @@ body {
 .round:nth-child(2) .match:nth-child(3)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 120px; /* Высота полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 230px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(3) .match:nth-child(2) {
+    position: relative;
+}
+
+.round:nth-child(3) .match:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
+    background-color: white;
+}
+
+.round:nth-child(3) .match:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    top: -11%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 100px; /* Высота полосы */
     width: 1px; /* Ширина третьей полосы */
     background-color: white;
 }
@@ -305,47 +376,23 @@ body {
     position: relative;
 }
 
-.round:nth-child(3) .match:nth-child(1)::before {
-    content: "";
-    position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
-
 .round:nth-child(3) .match:nth-child(1)::after {
     content: "";
     position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
+    top: 50%; /* Положение полосы по вертикали */
     height: 1px; /* Высота полосы */
-    width: 160px; /* Ширина третьей полосы */
-    left: 135px; /* Положение полосы по горизонтали */
+    width: 110px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
-.round:nth-child(3) .match:nth-child(2) {
-    position: relative;
-}
-
-.round:nth-child(3) .match:nth-child(2)::before {
+.round:nth-child(3) .match:nth-child(1)::before {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    left: 387px; /* Положение полосы по горизонтали */
+    height: 105px; /* Высота полосы */
     width: 1px; /* Ширина третьей полосы */
-    background-color: white;
-}
-
-.round:nth-child(3) .match:nth-child(2)::after {
-    content: "";
-    position: absolute;
-    top: 130%; /* Положение полосы по вертикали */
-    height: 1px; /* Высота полосы */
-    width: 160px; /* Ширина третьей полосы */
-    left: -24px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
@@ -356,19 +403,19 @@ body {
 .round:nth-child(4) .match:nth-child(1)::before {
     content: "";
     position: absolute;
-    top: -32%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 50px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 200px; /* Ширина третьей полосы */
+    left: 278px; /* Положение полосы по горизонтали */
     background-color: white;
 }
 
 .round:nth-child(4) .match:nth-child(1)::after {
     content: "";
     position: absolute;
-    top: 100%; /* Положение полосы по вертикали */
-    left: 135px; /* Положение полосы по горизонтали */
-    height: 100px; /* Высота полосы */
-    width: 1px; /* Ширина третьей полосы */
+    top: 50%; /* Положение полосы по вертикали */
+    height: 1px; /* Высота полосы */
+    width: 115px; /* Ширина третьей полосы */
+    left: -115px; /* Положение полосы по горизонтали */
     background-color: white;
 }
